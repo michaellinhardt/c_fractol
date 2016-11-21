@@ -11,14 +11,10 @@
 # include "mlx.h"
 # include "op.h"
 # include "ft_conf.h"
-# include "ft_conf_obj.h"
 # include "ft_terminal_log.h"
 # include "ft_struct_mlx.h"
-# include "ft_struct_vm.h"
-# include "ft_struct_args.h"
 # include "ft_struct_data.h"
 # include "ft_mlx.h"
-# define ABS(x) x < 0 ? -x : x
 
 int		exit1(int err, t_data *d, char *msg);
 int		exit2(int err, t_data *d, char *del, char *msg);
