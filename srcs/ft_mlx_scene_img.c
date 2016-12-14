@@ -5,7 +5,7 @@ int			scene_img_file(t_dmlx *m, DIR *dir, struct dirent *f, char *path)
 	char	*folder;
 	char	*file;
 
-	ft_printf("%!%sxpm/%s", &folder, data()->vm.folder, path);
+	ft_printf("%!%sxpm/%s", &folder, data()->folder, path);
 	if (!(dir = opendir(folder)))
 		exit2(1, data(), folder, "Cant open xpm sub dir.");
 	while ((f = readdir(dir)))
@@ -27,7 +27,7 @@ void		scene_img_folder(t_dmlx *m, DIR *dir, struct dirent *f)
 {
 	char	*folder;
 
-	ft_printf("%!%sxpm", &folder, data()->vm.folder);
+	ft_printf("%!%sxpm", &folder, data()->folder);
 	if (!(dir = opendir(folder)))
 		exit2(1, data(), folder, "Cant open xpm dir.");
 	while ((f = readdir(dir)))
@@ -57,17 +57,11 @@ void		scene_layout_init(t_img *i)
 
 void		scene_img(t_data *d, t_dmlx *m)
 {
-	d->mlx.loop += 0;
+	(void)d;
 	if (m->img_isload[m->scene] == 1)
 		return ;
-	if (m->scene == VM && !m->img_isload[0])
-	{
-		m->scene = 0;
-		scene_img_folder(m, (DIR *)NULL, (struct dirent *)NULL);
-		m->scene = VM;
-	}
 	scene_img_folder(m, (DIR *)NULL, (struct dirent *)NULL);
-	if (m->scene == VM)
-		scene_layout_init(&m->scene_img[VM][26]);
+	// if (m->scene == FRACTOL)
+	// 	scene_layout_init(&m->scene_img[VM][26]);
 	m->img_isload[m->scene] = 1;
 }

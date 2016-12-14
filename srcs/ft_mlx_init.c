@@ -9,32 +9,15 @@ int		red_cross(void)
 	return (0);
 }
 
-void	mlx_set_folder(t_dvm *v)
-{
-	DIR		*dir;
-
-	dir = (DIR *)NULL;
-	ft_strcpy(v->folder, "unknow?!");
-	if ((dir = opendir("./xpm")) && ft_strcpy(v->folder, "./"))
-		closedir(dir);
-	else if ((dir = opendir("./corewar/xpm"))
-	&& ft_strcpy(v->folder, "./corewar/"))
-		closedir(dir);
-	else
-		exit1(1, data(), "Cant start graphic mode from this folder.");
-	l1(10, "FOLDER PATH", v->folder);
-}
-
 void	mlx_start(t_data *d, t_dmlx *m)
 {
-	mlx_set_folder(&d->vm);
 	m->mlx = mlx_init();
-	if (m->scene != VM_INIT)
-		ft_music_start(&d->vm, 0);
+	if (m->scene != FRACTOL_INIT)
+		ft_music_start(d, 0);
 	else
 	{
-		ft_music_start(&d->vm, 0);
-		ft_music_start(&d->vm, 1);
+		ft_music_start(d, 0);
+		ft_music_start(d, 1);
 	}
 	m->win = mlx_new_window(m->mlx, WIN_X, WIN_Y, WIN_TITLE);
 	l1(10, "D->MLX", "get mlx_init() return");

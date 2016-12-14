@@ -53,16 +53,16 @@ int			l1(char ico, char *name, char *info)
 {
 	t_data		*d;
 
-	if (!data()->vm.console || !log_bool(ico))
+	if (!data()->console || !log_bool(ico))
 		return (1);
 	d = data();
 	if (ico != -2 && ico != -3)
-		ft_printf(" %C %s %21s %s %-48s %s (%d)\n", log_ico(ico), LINE_BLUE
-		, name, LINE_GREEN2, info, LINE_YEL, data()->vm.cycle);
+		ft_printf(" %C %s %21s %s %-48s %s\n", log_ico(ico), LINE_BLUE
+		, name, LINE_GREEN2, info, LINE_YEL);
 	else
-		ft_printf(" %C %s %21s %s \e[90m%-46s %s (%d)\n",
+		ft_printf(" %C %s %21s %s \e[90m%-46s %s\n",
 				log_ico(ico), LINE_BLUE, name
-		, LINE_GREEN2, info, LINE_YEL, data()->vm.cycle);
+		, LINE_GREEN2, info, LINE_YEL);
 	return (1);
 }
 
@@ -70,31 +70,16 @@ int			l2(char ico, char *name, char *info, int val1)
 {
 	t_data		*d;
 
-	if (!data()->vm.console || !log_bool(ico))
+	if (!data()->console || !log_bool(ico))
 		return (1);
 	d = data();
 	if (ico != -2 && ico != -3)
-		ft_printf(" %C %s %21s %s %9d \e[90m-> \e[35m%-35s\e[93m %s (%d)\n",
+		ft_printf(" %C %s %21s %s %9d \e[90m-> \e[35m%-35s\e[93m %s\n",
 				log_ico(ico), LINE_BLUE, name
-		, LINE_GREEN2, val1, info, LINE_YEL, data()->vm.cycle);
+		, LINE_GREEN2, val1, info, LINE_YEL);
 	else
-		ft_printf(" %C %s %21s %s \e[90m%9d -> %-35s\e[93m %s (%d)\n",
+		ft_printf(" %C %s %21s %s \e[90m%9d -> %-35s\e[93m %s\n",
 				log_ico(ico), LINE_BLUE, name
-		, LINE_GREEN2, val1, info, LINE_YEL, data()->vm.cycle);
-	return (1);
-}
-
-int			log_inst(int player, int id, char *inst)
-{
-	t_data		*d;
-	char		*info;
-
-	d = data();
-	if (!d->vm.console || (!LOG_ALL && !LOG_INST))
-		return (1);
-	ft_printf("%![%s] player: %d - proc: %d", &info, inst, player, id);
-	ft_printf(" %C %s %21s %s %-48s %s (%d)\n", L'❤', LINE_BLUE, "INSTRUCTION"
-	, LINE_GREEN2, info, LINE_YEL, d->vm.cycle);
-	ft_strdel(&info);
+		, LINE_GREEN2, val1, info, LINE_YEL);
 	return (1);
 }

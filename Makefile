@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/14 10:40:44 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/14 11:40:09 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,18 @@ SRC_DIR = srcs
 OBJ_DIR = objs
 
 LIST	=	ft_data \
+			ft_sdl_music \
+			ft_mlx_init \
+			ft_mlx_loop \
+			ft_mlx_hook \
+			ft_mlx_img \
+			ft_mlx_scene \
+			ft_mlx_scene_img \
 			ft_terminal_ascii \
+			ft_terminal_log \
+			ft_display_help \
+			ft_exit \
+			ft_free \
 			ft_fractol
 
 SRC := $(addprefix $(SRC_DIR)/, $(addsuffix .$(LANGAGE), $(LIST)))

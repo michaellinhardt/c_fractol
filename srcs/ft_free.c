@@ -6,7 +6,7 @@ int		free_ascii(int ico, char *type, char *info)
 	char		msg[4096];
 	char		bar[100];
 
-	if (!data()->vm.console)
+	if (!data()->console)
 		return (1);
 	uni = (ico == 1) ? L'✅' : L'❕';
 	(ico == 1) ?
@@ -24,7 +24,7 @@ void	free_img(t_img *img, t_dmlx *m, int i, int j)
 			while (++j < SCENE_IMG_MAX)
 				if ((img = &m->scene_img[i][j]) && img->img)
 				{
-					if (data()->vm.console)
+					if (data()->console)
 						ft_printf(
 						" %C %s %13s %s %14s[%03d][%03d] %s %-29s %s\e[93m\n"
 						, L'✅', LINE_GREEN, "t_img", LINE_GREEN, "img_isload"
@@ -33,37 +33,14 @@ void	free_img(t_img *img, t_dmlx *m, int i, int j)
 				}
 }
 
-void	free_proc(t_proc *lst, t_proc *destroy, int wich)
-{
-	int		i;
-
-	i = 0;
-	while (lst)
-	{
-		++i;
-		destroy = lst;
-		lst = lst->n;
-		ft_memdel((void **)&destroy);
-	}
-	if (data()->vm.console && wich == 1)
-		ft_printf(" %C %s %13s %s %-24s %s free %5d struct %11s %s\e[93m\n"
-		, L'✅', LINE_GREEN, "t_proc", LINE_GREEN, "d->vm.proc"
-		, LINE_GREEN, i, " ", LINE_GREEN);
-	else if (data()->vm.console)
-		ft_printf(" %C %s %13s %s %-24s %s free %5d struct %11s %s\e[93m\n"
-		, L'✅', LINE_GREEN, "t_proc", LINE_GREEN, "d->vm.procdie"
-		, LINE_GREEN, i, " ", LINE_GREEN);
-}
-
 void	free_data(t_data *d)
 {
 	ascii(ASC_FREEDATA);
 	get_next_line(-10, NULL);
 	free_img((t_img *)NULL, &d->mlx, -1, -1);
-	free_proc(d->vm.proc, (t_proc *)NULL, 1);
-	if (d->vm.graphic)
+	if (d->sound)
 	{
-		Mix_FreeMusic(d->vm.son);
+		Mix_FreeMusic(d->son);
 		Mix_CloseAudio();
 	}
 }

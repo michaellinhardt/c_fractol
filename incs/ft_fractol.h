@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/14 10:32:52 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/14 11:39:56 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,16 @@
 # include "ft_struct_data.h"
 # include "ft_mlx.h"
 
-t_data	*data(void);
+t_data		*data(void);
+
+int			l1(char ico, char *name, char *info);
+int			l2(char ico, char *name, char *info, int val1);
+
+int			exit1(int err, t_data *d, char *msg);
+int			exit2(int err, t_data *d, char *del, char *msg);
+
+void		free_data(t_data *d);
+
+void		ft_display_help(void);
 
 #endif

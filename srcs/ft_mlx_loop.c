@@ -13,18 +13,13 @@ int		loop(char etat)
 	return (1);
 }
 
-void	loop_vm(t_data *d)
-{
-	scene(d, &d->mlx);
-}
-
 int		loop_hook(t_data *d)
 {
 	t_dmlx *m;
 
 	m = &d->mlx;
 	scene_img(d, &d->mlx);
-	loop_vm(d);
+	scene(d, &d->mlx);
 	if (USLEEP_BOOL && m->loop == 0 && !usleep(USLEEP_TIME))
 		return (0);
 	if (m->loopstop != 0 && --m->loopstop < 1)
