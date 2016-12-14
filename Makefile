@@ -9,7 +9,7 @@ LIBFT 	= -L$(LIBS) -lft -lm
 MLX_PATH = ./minilibx/
 LIBMLX	= -L./minilibx -lmlx -framework OpenGL -framework Appkit
 LANGAGE	= c
-NAME	= corewar
+NAME	= fractol
 SDL2		= -framework SDL2
 SDL2_MIXER	= -framework SDL2_mixer
 
@@ -66,13 +66,6 @@ fclean: clean
 sdl_install :
 	curl https://dl.dropboxusercontent.com/u/22561204/SDL/Archive.zip > /tmp/Archive.zip
 	unzip -o /tmp/Archive.zip -d ~/Library/Frameworks/
-
-#leaks: $(NAME) -leaks
-leaks: $(NAME)
-	./corewar ./zaz/bee_gees.cor ./zaz/bee_gees.cor ./zaz/bee_gees.cor ./zaz/bee_gees.cor
-
--leaks:
-	@-valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./$(NAME)
 
 re: fclean all
 
