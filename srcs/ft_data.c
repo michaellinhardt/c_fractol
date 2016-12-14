@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_data.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/28 13:42:39 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/06/07 08:34:51 by mlinhard         ###   ########.fr       */
+/*   Created: 2016/12/14 10:32:48 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/14 10:32:49 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_fractol.h"
 
-int		ft_putstr(char const *s)
+t_data	*data(void)
 {
-	if (s)
-		ft_putstr_fd(s, 1);
-	return (1);
+	static t_data	d;
+	static int		init = 0;
+
+	if (!init && ++init)
+		ft_bzero(&d, sizeof(t_data));
+	return (&d);
 }

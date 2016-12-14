@@ -1,29 +1,32 @@
-# VAR COMP
-FLAGS	= -Wall -Wextra -Werror -O3 -march=native
-CC		= gcc
-LINCS	= ./libft/includes
-MLX_INC	= ./minilibx
-INCS	= -I ../incs -I $(MLX_INC) -I $(LINCS)
-LIBS	= ./libft
-LIBFT 	= -L$(LIBS) -lft -lm
-MLX_PATH = ./minilibx/
-LIBMLX	= -L./minilibx -lmlx -framework OpenGL -framework Appkit
-LANGAGE	= c
-NAME	= fractol
+FLAGS		= -Wall -Wextra -Werror -O3
+CC			= gcc
+
+LINCS		= ./libft/includes
+MLX_INC		= ./minilibx
+INCS		= -I ./incs -I $(MLX_INC) -I $(LINCS)
+
+LIBS		= ./libft
+LIBFT 		= -L$(LIBS) -lft
+
+MLX_PATH 	= ./minilibx/
+LIBMLX		= -L./minilibx -lmlx -framework OpenGL -framework Appkit
+
+LANGAGE		= c
+NAME		= fractol
+
 SDL2		= -framework SDL2
 SDL2_MIXER	= -framework SDL2_mixer
-
 SDL2_HEADER			= -I ~/Library/Frameworks/SDL2.framework/Headers/
 SDL2_HEADER_MIXER	= -I ~/Library/Frameworks/SDL2_mixer.framework/Headers/
-
 SDL			= -F ~/Library/Frameworks $(SDL2_MIXER) $(SDL2)
 SDL_HEADER	= -F ~/Library/Frameworks $(SDL2_HEADER_MIXER) $(SDL2_HEADER)
 
-# VAR FOLDER/FILE
 SRC_DIR = srcs
 OBJ_DIR = objs
 
-LIST	=	main.c \
+LIST	=	ft_data \
+			ft_terminal_ascii \
+			ft_fractol
 
 OBJO = $(LIST:.c=.o)
 SRC = $(addprefix $(SRC_DIR)/, $(LIST))
@@ -58,7 +61,6 @@ clean2:
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] $(OBJ_DIR) folder deleted"
 
 fclean: clean
-	@/bin/rm -rf *.dSYM
 	@make fclean -C $(LIBS)
 	@/bin/rm -f $(NAME)
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] bin deleted"
