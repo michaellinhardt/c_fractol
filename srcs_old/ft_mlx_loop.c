@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 int		loop(char etat)
 {

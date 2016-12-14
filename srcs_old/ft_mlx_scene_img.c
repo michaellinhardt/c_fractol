@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 int			scene_img_file(t_dmlx *m, DIR *dir, struct dirent *f, char *path)
 {

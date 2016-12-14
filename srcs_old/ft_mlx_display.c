@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	reset_img(t_dmlx *m, t_img *img)
 {

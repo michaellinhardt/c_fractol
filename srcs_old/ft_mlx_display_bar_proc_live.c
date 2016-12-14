@@ -1,7 +1,7 @@
 /*
 ** GENERE L'AFFICHAGE DES BAR DE LIVE
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 static void	put_last_live_img(t_img *img, t_img *last, int x, int y)
 {

@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	ft_display_vm_papy(t_dvm *vm)
 {

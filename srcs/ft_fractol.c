@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 static void	ft_recup_options_players(t_data *d, char **argv, int argc)
 {

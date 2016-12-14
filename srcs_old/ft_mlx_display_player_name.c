@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void		display_player_name(t_dmlx *m, t_dvm *v)
 {

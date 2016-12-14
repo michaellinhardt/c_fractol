@@ -1,7 +1,7 @@
 /*
 ** GENERE L'AFFICHAGE DES BAR DE LIVE
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 static void	put_open_img_4(t_img *img, t_img *open, int x, int y)
 {

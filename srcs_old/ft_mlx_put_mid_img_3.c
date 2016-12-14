@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 static void	ft_put_barliveprocalpha(t_img *img, int *pimg, int *pmid, int y)
 {

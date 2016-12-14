@@ -1,7 +1,7 @@
 /*
 ** GENERE L'AFFICHAGE DE LARENE UNIQUEMENT
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	display_arene(t_dmlx *m, t_dvm *v, int x, int y)
 {

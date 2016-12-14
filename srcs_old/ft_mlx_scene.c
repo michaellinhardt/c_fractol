@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 int			ft_is_mine(t_dvm *v)
 {

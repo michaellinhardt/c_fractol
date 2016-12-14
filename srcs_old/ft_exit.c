@@ -2,7 +2,7 @@
  * exit1 free les donné data
  * exit2 free aussi le char * qu'il reçoit dans le cas d'un leave sur gnl
  */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	exitascii(t_data *d, int err, char *msg)
 {

@@ -1,7 +1,7 @@
 /*
 ** GENERE L'AFFICHAGE DU COMPTE DES PROCESSUS
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	display_processus_live_number(t_dmlx *m, t_dvm *v)
 {

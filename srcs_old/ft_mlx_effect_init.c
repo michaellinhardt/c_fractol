@@ -1,7 +1,7 @@
 /*
 ** INITIALISE LES EFFET
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void		effect_init(t_dmlx *m, t_effect *e, int i)
 {

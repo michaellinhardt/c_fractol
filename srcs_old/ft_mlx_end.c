@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	vm_end_shadow(t_img *i)
 {

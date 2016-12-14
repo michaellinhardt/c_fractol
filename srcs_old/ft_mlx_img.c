@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file)
 {

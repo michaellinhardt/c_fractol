@@ -1,7 +1,7 @@
 /*
 ** GENERE L'AFFICHAGE
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	display_ctodie_bar(t_dmlx *m, t_dvm *v, double cycle, int pixel)
 {

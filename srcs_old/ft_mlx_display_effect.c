@@ -1,7 +1,7 @@
 /*
 ** GENERE LES EFFET
 */
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	put_effect_img(t_img *l, int id, int x, int y)
 {

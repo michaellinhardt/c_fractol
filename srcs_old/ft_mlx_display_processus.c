@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	put_proc_bloc(t_img *img, t_img *bloc, int x, int y)
 {

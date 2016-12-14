@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 int		mouseo_hook(int x, int y, t_data *d)
 {

@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 void	intro_out_fade(t_img *i, int fade)
 {

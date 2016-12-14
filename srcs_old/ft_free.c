@@ -1,4 +1,4 @@
-#include "ft_corewar.h"
+#include "ft_fractol.h"
 
 int		free_ascii(int ico, char *type, char *info)
 {
