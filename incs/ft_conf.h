@@ -4,24 +4,11 @@
 /*
 **	Header pour les parametre réglable
 */
-# define GRAPHIC_MODE 0
 # define CONSOLE_LOG 0
-# define WIN_TITLE "Corewar"
-# define WIN_X 1920
-# define WIN_Y 1200
+# define WIN_TITLE "Fractol"
+# define WIN_X 1366
+# define WIN_Y 768
 
-/*
-**  COULEUR DE LA VM
-*/
-# define ARENE_CODE_COLOR_WHITE 0xa6a6a6
-# define ARENE_CODE_COLOR_P1_LIVE 0x00ff66
-# define ARENE_CODE_COLOR_P1 0x00cc00
-# define ARENE_CODE_COLOR_P2_LIVE 0xf4532a
-# define ARENE_CODE_COLOR_P2 0xff0000
-# define ARENE_CODE_COLOR_P3_LIVE 0x1fbdff
-# define ARENE_CODE_COLOR_P3 0x6600ff
-# define ARENE_CODE_COLOR_P4_LIVE 0xeaff00
-# define ARENE_CODE_COLOR_P4 0xffcc33
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"
 # define BLUE "\033[0;34m"
@@ -30,24 +17,6 @@
 # define YELLOW "\033[0;33m"
 # define PURPLE "\033[0;35m"
 # define NEUTRE "\033[0;m"
-
-/*
-**  INTRO FADE SPEED
-*/
-# define INTRO_FADEIN_SPEED 3
-# define INTRO_FADEOUT_SPEED 5
-# define VM_FADEIN_SPEED 50
-# define VM_FADEOUT_SPEED 30
-
-/*
-**  DONNEE DE LA VM
-*/
-# define SIZE_CHAR_ARENE (MEM_SIZE * 2)
-# define CHAMP_NAME_SIZE 2048
-# define CYCLE_PER_LOOP 1
-# define CPERLOOP_INC 11
-# define CPERLOOP_MAX 300
-# define ARENE_CODE_COLOR 0xCCCCCC
 
 /*
 ** GESTION DU TEMPS D'ARRET DE LA BOUCLE SI RIEN N'EST A AFFICHER
@@ -63,19 +32,11 @@
 */
 # define SCENE_MAX 20
 # define SCENE_IMG_MAX 50
-# define EFFECTS_MAX_SLOT 20
-# define BLOC_FADE 75
-
-/*
-** CRAZY MODE ?
-*/
-# define DONT_CLEAN_PROC 0
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS
 ** ET CHEMINS DES FICHIERS ASCII
 */
-# define GIF_DIR "./gif/"
 # define ASC_LOGO "./ascii/logo"
 # define ASC_INIT "./ascii/init"
 # define ASC_LOG "./ascii/log"
