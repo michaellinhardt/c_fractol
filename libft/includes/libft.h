@@ -33,7 +33,7 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putchar(char c);
 int					ft_putstr(char const *s);
 void				ft_putnbr(int n);
-int					ft_putendl1(char const *s);
+int					ft_putendl(char const *s);
 
 size_t				ft_strlen(const char *s);
 int					ft_strcmp(const char *s1, const char *s2);

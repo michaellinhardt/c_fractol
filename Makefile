@@ -1,25 +1,25 @@
-FLAGS		= -Wall -Wextra -Werror -O3
-CC			= gcc
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
+#    Updated: 2016/12/14 10:40:44 by mlinhard         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-LINCS		= ./libft/includes
-MLX_INC		= ./minilibx
-INCS		= -I ./incs -I $(MLX_INC) -I $(LINCS)
-
-LIBS		= ./libft
-LIBFT 		= -L$(LIBS) -lft
-
-MLX_PATH 	= ./minilibx/
-LIBMLX		= -L./minilibx -lmlx -framework OpenGL -framework Appkit
-
-LANGAGE		= c
-NAME		= fractol
-
-SDL2		= -framework SDL2
-SDL2_MIXER	= -framework SDL2_mixer
-SDL2_HEADER			= -I ~/Library/Frameworks/SDL2.framework/Headers/
-SDL2_HEADER_MIXER	= -I ~/Library/Frameworks/SDL2_mixer.framework/Headers/
-SDL			= -F ~/Library/Frameworks $(SDL2_MIXER) $(SDL2)
-SDL_HEADER	= -F ~/Library/Frameworks $(SDL2_HEADER_MIXER) $(SDL2_HEADER)
+FLAGS	= -Wall -Wextra -Werror
+# FLAGS	=
+CC		= gcc $(FLAGS)
+INCS 	= -I./incs -I./libft/includes -I./minilibx
+LIBS	= ./libft
+LIBFT 	= -L$(LIBS) -lft
+LIBMLX	= -L./minilibx -lmlx -framework OpenGL -framework AppKit
+LIBMLX2	= -L./minilibx -lmlx -L/usr/X11/lib -lX11 -lXext -framework OpenGL -framework AppKit
+LANGAGE	= c
+NAME	= fractol
 
 SRC_DIR = srcs
 OBJ_DIR = objs
@@ -28,9 +28,8 @@ LIST	=	ft_data \
 			ft_terminal_ascii \
 			ft_fractol
 
-OBJO = $(LIST:.c=.o)
-SRC = $(addprefix $(SRC_DIR)/, $(LIST))
-OBJ = $(addprefix $(OBJ_DIR)/, $(OBJO))
+SRC := $(addprefix $(SRC_DIR)/, $(addsuffix .$(LANGAGE), $(LIST)))
+OBJ := $(addprefix $(OBJ_DIR)/, $(addsuffix .o, $(LIST)))
 
 C_END	= "\033[0m"
 C_GOOD	= "\033[32m"
@@ -38,29 +37,33 @@ C_GREY  = "\033[1;30m"
 C_BAD	= "\033[31m"
 C_BLUE	= "\033[34;1m"
 
-all: $(NAME)
+SDL2		= -framework SDL2
+SDL2_MIXER	= -framework SDL2_mixer
+SDL2_HEADER			= -I ~/Library/Frameworks/SDL2.framework/Headers/
+SDL2_HEADER_MIXER	= -I ~/Library/Frameworks/SDL2_mixer.framework/Headers/
+SDL			= -F ~/Library/Frameworks $(SDL2_MIXER) $(SDL2)
+SDL_HEADER	= -F ~/Library/Frameworks $(SDL2_HEADER_MIXER) $(SDL2_HEADER)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@mkdir -p $(dir $@)
-	$(CC) -c $(FLAGS) $(INCS) $(SDL_HEADER) $< -o $@
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	@make -C $(LIBS)
-	@make -C $(MLX_PATH)
-	$(CC) -o $(NAME) $(FLAGS) $(OBJ) $(LIBFT) $(LIBMLX) $(SDL) $(SDL_HEADER)
+	@make -C ./minilibx
+	$(CC) $(OBJ) -o $@ $(FLAGS) $(INCS) $(LIBFT) $(LIBMLX) $(SDL) $(SDL_HEADER)
 	@echo "✅  ["$(C_GOOD) $(NAME) $(C_END)"] created"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(LANGAGE)
+	@mkdir -p $(dir $@)
+	$(CC) $(INCS) $(SDL_HEADER) -o $@ -c $<
 
 clean:
 	@make clean -C $(LIBS)
-	@make clean -C $(MLX_PATH)
-	@/bin/rm -rf $(OBJ_DIR)
-	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] $(OBJ_DIR) folder deleted"
-
-clean2:
+	@make clean -C ./minilibx
 	@/bin/rm -rf $(OBJ_DIR)
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] $(OBJ_DIR) folder deleted"
 
 fclean: clean
+	@/bin/rm -rf *.dSYM
 	@make fclean -C $(LIBS)
 	@/bin/rm -f $(NAME)
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] bin deleted"
@@ -69,6 +72,6 @@ sdl_install :
 	curl https://dl.dropboxusercontent.com/u/22561204/SDL/Archive.zip > /tmp/Archive.zip
 	unzip -o /tmp/Archive.zip -d ~/Library/Frameworks/
 
-re: fclean all
+re: fclean $(NAME)
 
-.PHONY: all clean clean2 fclean re leaks -leaks
+.PHONY: all clean clean2 fclean re fractol sdl_install

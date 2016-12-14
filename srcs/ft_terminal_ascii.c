@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:14 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/14 10:33:14 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/14 10:41:27 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ascii_init2(void)
 {
-	if (!data()->vm.console)
-		return ;
 	ft_putstr("🎼  ╠═══════════════════════╬═══════════════════════════════");
 	ft_putendl("═══════════════════╣");
 	ft_printf("🎼  %s %20s  %s  %47s %s\n", LINE_MAG, "LOG NEW IMG"
@@ -34,8 +32,6 @@ void	ascii_init2(void)
 
 int		ascii_init(void)
 {
-	if (!data()->vm.console)
-		return (1);
 	ft_printf("🎼  %s %20s  %s  %47s %s\n", LINE_MAG, "WIN_TITLE"
 	, LINE_GREEN2, WIN_TITLE, LINE_YEL);
 	ft_printf("🎼  %s %20s  %s  %47d %s\n", LINE_MAG, "WIN_X", LINE_GREEN2
@@ -57,8 +53,6 @@ int		ascii(char *path)
 	int		fd;
 	char	*line;
 
-	if (!data()->vm.console)
-		return (1);
 	line = NULL;
 	fd = open(path, O_RDONLY);
 	ft_putstr(TERMINAL_COLOR);
