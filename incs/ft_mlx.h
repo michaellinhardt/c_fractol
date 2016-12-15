@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/14 11:36:35 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/15 03:56:45 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,8 @@ void	scene_img(t_data *d, t_dmlx *m);
 
 int		itow(void *img, int x, int y, char *name);
 void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file);
+
+void	scene_0_intro(t_data *d, t_dmlx *m);
+
 
 #endif

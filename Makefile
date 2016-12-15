@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/14 11:40:09 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/15 03:56:08 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ LIST	=	ft_data \
 			ft_display_help \
 			ft_exit \
 			ft_free \
+			ft_scene_0_intro \
 			ft_fractol
 
 SRC := $(addprefix $(SRC_DIR)/, $(addsuffix .$(LANGAGE), $(LIST)))
