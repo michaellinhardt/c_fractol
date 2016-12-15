@@ -61,7 +61,6 @@ void		scene_img(t_data *d, t_dmlx *m)
 	if (m->img_isload[m->scene] == 1)
 		return ;
 	scene_img_folder(m, (DIR *)NULL, (struct dirent *)NULL);
-	// if (m->scene == FRACTOL)
-	// 	scene_layout_init(&m->scene_img[VM][26]);
+	scene_img_init(d, m);
 	m->img_isload[m->scene] = 1;
 }

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_scene_0_intro.c                                 :+:      :+:    :+:   */
+/*   ft_mlx_scene_img_push.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/15 06:17:16 by mlinhard         ###   ########.fr       */
+/*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/15 06:18:48 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fractol.h"
 
-void		scene_0_intro(t_data *d, t_dmlx *m)
+
+void		scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img)
 {
-	scene_img_push(d, m, -1, (t_img *)NULL);
-	itow(layer(0)->img, 0, 0, "push layer to window");
+	img = layer(1);
+	while( m->scene_img[m->scene][++i].img )
+		layer_add(img, &m->scene_img[m->scene][i]);
 	(void)d;
 	(void)m;
+	(void)img;
 }

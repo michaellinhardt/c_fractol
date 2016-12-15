@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/15 03:56:08 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/15 04:50:19 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ LIST	=	ft_data \
 			ft_mlx_img \
 			ft_mlx_scene \
 			ft_mlx_scene_img \
+			ft_mlx_scene_img_push \
+			ft_mlx_scene_layer \
+			ft_mlx_scene_img_init \
 			ft_terminal_ascii \
 			ft_terminal_log \
 			ft_display_help \

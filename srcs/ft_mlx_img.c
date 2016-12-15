@@ -1,5 +1,16 @@
 #include "ft_fractol.h"
 
+void	*mlx_new_img(t_dmlx *m, t_img *img, int width, int heigh)
+{
+	if (!(img->img)
+
+	&& !(img->img = mlx_new_image(m->mlx, width, heigh)))
+		exit1(1, data(), "Cant load new image file");
+	if (!(img->str))
+		img->str = mlx_get_data_addr(img->img, &img->bpp, &img->sl, &img->end);
+	return (img->img);
+}
+
 void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file)
 {
 	if (!(img->img) && LOG_XTOI == 1)

@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/15 03:56:45 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/15 05:02:43 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,15 @@ int		loop(char etat);
 
 void	scene(t_data *d, t_dmlx *m);
 void	scene_img(t_data *d, t_dmlx *m);
+void	scene_img_init(t_data *d, t_dmlx *m);
+void	scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img);
+
+t_img	*layer(int reset);
+void	layer_add(t_img *l, t_img *i);
+void	scene_0_intro(t_data *d, t_dmlx *m);
 
 int		itow(void *img, int x, int y, char *name);
 void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file);
-
-void	scene_0_intro(t_data *d, t_dmlx *m);
-
+void	*mlx_new_img(t_dmlx *m, t_img *img, int width, int heigh);
 
 #endif

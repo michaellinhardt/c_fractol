@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/15 04:05:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/15 04:59:05 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct		s_img
 	char			name[255];
 	int				top[2];
 	int				bot[2];
-	int				pos[2];
+	int				xy[2];
 	int				fade;
 	int				cut_mode;
 	int				width;
@@ -72,6 +72,7 @@ typedef struct		s_dmlx
 	enum e_scene	scene;
 	char			img_isload[SCENE_MAX];
 	t_img			scene_img[SCENE_MAX][SCENE_IMG_MAX];
+	t_img			layer;
 }					t_dmlx;
 
 #endif
