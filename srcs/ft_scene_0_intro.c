@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/15 03:56:57 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/15 04:04:25 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,6 @@ void		scene_0_intro(t_data *d, t_dmlx *m)
 {
 	(void)d;
 	(void)m;
+
+	
 }
