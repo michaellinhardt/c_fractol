@@ -42,7 +42,7 @@ void	mouse_check_img(t_dmlx *m, int btn, t_img *img, int i)
 		&& (img->mouse_btn == 3 || (img->mouse_btn == btn))
 		&& (m->input.mr_x >= img->top[0] && m->input.mr_x <= img->bot[0])
 		&& (m->input.mr_y >= img->top[1] && m->input.mr_y <= img->bot[1]))
-			img->mouse_action(&data(), m);
+			img->mouse_action();
 	}
 }
 

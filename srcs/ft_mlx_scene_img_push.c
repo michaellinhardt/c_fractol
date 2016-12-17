@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 17:02:55 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:34:41 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@ void			anim_eval(t_img *img)
 		img->fade -= img->anim_tempo;
 		if (img->fade < 0)
 			img->fade = 0;
+	}
+	if (img->anim_id == FADE_OUT && img->fade < 255)
+	{
+		img->fade += img->anim_tempo;
+		if (img->fade > 255)
+			img->fade = 255;
 	}
 }
 
@@ -51,6 +57,7 @@ void		scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img)
 {
 	img = layer(1, 1);
 	while ( m->scene_img[m->scene][++i].img )
-		layer_add(img, &m->scene_img[m->scene][i]);
+		if (m->scene_img[m->scene][i].status == 0)
+			layer_add(img, &m->scene_img[m->scene][i]);
 	(void)d;
 }
