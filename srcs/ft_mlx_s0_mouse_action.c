@@ -6,13 +6,13 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 03:36:36 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 03:50:52 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:23:23 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fractol.h"
 
-void		scene_increment(void)
+void		intro_start_fade_out(t_data *d, t_dmlx *m)
 {
 	data()->mlx.scene++;
 }

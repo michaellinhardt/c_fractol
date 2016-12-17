@@ -32,5 +32,6 @@ void	mlx_start(t_data *d, t_dmlx *m)
 	l1(10, "MLX_HOOK", "all hook are initialised");
 	l1(10, "EFFECT_INIT", "effect data are initialised");
 	loop(0);
+	layer(0, 2);
 	mlx_loop(m->mlx);
 }

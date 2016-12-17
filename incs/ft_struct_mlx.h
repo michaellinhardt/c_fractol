@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 03:54:38 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:23:34 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct		s_img
 	int				anim_repeat;
 	int				mouse_status;
 	int				mouse_btn;
-	void 			(*mouse_action)(void);
+	void 			(*mouse_action)(t_data *d, t_dmlx *m);
 	int				status;
 	struct s_img	*switch_with[SCENE_MAX][SCENE_IMG_MAX];
 	int				width;
@@ -102,7 +102,6 @@ typedef struct		s_dmlx
 	enum e_scene	scene;
 	char			img_isload[SCENE_MAX];
 	t_img			scene_img[SCENE_MAX][SCENE_IMG_MAX];
-	t_img			layer;
 }					t_dmlx;
 
 #endif
