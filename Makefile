@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/15 04:50:19 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/17 04:08:10 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ LIST	=	ft_data \
 			ft_mlx_scene_img_push \
 			ft_mlx_scene_layer \
 			ft_mlx_scene_img_init \
+			ft_mlx_s0_mouse_action \
 			ft_terminal_ascii \
 			ft_terminal_log \
 			ft_display_help \
@@ -72,14 +73,14 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(LANGAGE)
 	$(CC) $(INCS) $(SDL_HEADER) -o $@ -c $<
 
 clean:
-	@make clean -C $(LIBS)
-	@make clean -C ./minilibx
+#	@make clean -C $(LIBS)
+#	@make clean -C ./minilibx
 	@/bin/rm -rf $(OBJ_DIR)
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] $(OBJ_DIR) folder deleted"
 
 fclean: clean
 	@/bin/rm -rf *.dSYM
-	@make fclean -C $(LIBS)
+#	@make fclean -C $(LIBS)
 	@/bin/rm -f $(NAME)
 	@echo "⚰  ["$(C_GREY) $(NAME) $(C_END)"] bin deleted"
 

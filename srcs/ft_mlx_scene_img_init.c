@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/16 20:27:01 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 04:00:26 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,13 @@ void		scene_img_init_scene(t_dmlx *m, t_img *img, int i)
 {
 	while ( m->scene_img[m->scene][++i].img )
 	{
-		img = &m->scene_img[0][0];
+		img = &m->scene_img[0][i];
 		img->width = img->bot[0] - img->top[0];
 		img->heigh = img->bot[1] - img->top[1];
 		l1(1, "IMG_INIT"
-		, add_message(m->scene_img[0][0].name, ": calcul area width & heigh"));
+		, add_message(m->scene_img[0][i].name, ": calcul area width & heigh"));
+		if (img->anim_id == FADE_IN)
+			img->fade = 255;
 	}
 }
 
@@ -41,9 +43,12 @@ void		scene_img_init_0_intro(t_data *d, t_dmlx *m, t_img *img)
 {
 	img = &m->scene_img[0][0];
 	ft_memcpy(img->name, "0_bg_intro.xpm\0", 15);
-	img->bot[0] = WIN_X;
-	img->bot[1] = WIN_Y;
-	img->fade = 0;
+	img->bot[0] = S0I0_BOT_X;
+	img->bot[1] = S0I0_BOT_Y;
+	img->mouse_btn = S0I0_MOUSE_BTN;
+	img->mouse_action = S0I0_MOUSE_ACTION;
+	img->anim_id = S0I0_ANIM_ID;
+	img->anim_tempo = S0I0_ANIM_TEMPO;
 
 	l1(1, "IMG_INIT", m->scene_img[0][0].name);
 	(void)d;

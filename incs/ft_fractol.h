@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/14 11:39:56 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 04:02:42 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "ft_struct_mlx.h"
 # include "ft_struct_data.h"
 # include "ft_mlx.h"
+# include "ft_mlx_scene_conf.h"
 
 t_data		*data(void);
 

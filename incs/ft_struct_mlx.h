@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/16 20:31:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 03:54:38 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 enum	e_scene {
 	INTRO_LOAD,
-	INTRO_MENU,
 	INTRO_OUT,
 	FRACTOL_INIT,
+	FOLLOW_MOUSE,
 	FRACTOL
 };
 
@@ -62,7 +62,7 @@ typedef struct		s_img
 	int				bot[2];
 	int				xy[2];
 	int				fade;
-	enum e_anim		e_anim_id;
+	enum e_anim		anim_id;
 	int				anim_time;
 	int				anim_tempo;
 	int				anim_repeat;
@@ -77,6 +77,7 @@ typedef struct		s_img
 
 typedef struct		s_input
 {
+	char			mode;
 	char			mleft;
 	char			mright;
 	char			left;

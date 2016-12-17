@@ -8,8 +8,6 @@ void		scene(t_data *d, t_dmlx *m)
 		;
 	else if (m->scene == INTRO_LOAD)
 		scene_0_intro(d, m);
-	else if (m->scene == INTRO_MENU)
-		;
 	else if (m->scene == INTRO_OUT)
 		;
 }
