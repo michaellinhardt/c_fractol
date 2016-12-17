@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:24:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:37:28 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void		scene_img_init_0_intro(t_data *d, t_dmlx *m, t_img *img)
 void		scene_img_init(t_data *d, t_dmlx *m)
 {
 	l1(1, "IMG_INIT", "initialising scene img");
-	if (m->scene == INTRO_LOAD)
+	if (m->scene == INTRO)
 		scene_img_init_0_intro(d, m, (t_img *)NULL);
 	scene_img_init_scene(m, (t_img *)NULL, -1);
 	(void)d;

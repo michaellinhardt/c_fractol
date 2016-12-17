@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:34:03 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:37:50 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 # define FT_STRUCT_MLX_H
 
 enum	e_scene {
-	INTRO_LOAD,
-	INTRO_OUT,
+	INTRO,
 	FRACTOL_INIT,
-	FOLLOW_MOUSE,
 	FRACTOL
 };
 
