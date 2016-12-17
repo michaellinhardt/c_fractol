@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:23:34 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:26:43 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct		s_img
 	int				anim_repeat;
 	int				mouse_status;
 	int				mouse_btn;
-	void 			(*mouse_action)(t_data *d, t_dmlx *m);
+	void 			(*mouse_action)(void);
 	int				status;
 	struct s_img	*switch_with[SCENE_MAX][SCENE_IMG_MAX];
 	int				width;

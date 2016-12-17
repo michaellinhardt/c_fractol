@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:23:47 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 20:26:50 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_img	*layer(int id, int reset);
 void	layer_add(t_img *l, t_img *i);
 void	scene_0_intro(t_data *d, t_dmlx *m);
 
-void	intro_start_fade_out(t_data *d, t_dmlx *m);
+void	intro_start_fade_out(void);
 
 int		itow(void *img, int x, int y, char *name);
 void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file);
