@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 01:07:23 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 01:12:48 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ static void	*calc_pixel(void *i)
 	end = ((*((int *)i)) == 7) ? WIN_X * WIN_Y : lay->i + portion;
 	while ( ++lay->i < end )
 	{
-		if ((*((int *)i)) == 0 || (*((int *)i)) == 3 || (*((int *)i)) == 6)
+		if ((*((int *)i)) / 2 - 1 == 0)
 			lay->ptr[lay->i] = 0x0091fb30;
-		else if ((*((int *)i)) == 1 || (*((int *)i)) == 4 || (*((int *)i)) == 7)
+		else
 			lay->ptr[lay->i] = 0x00b33e66;
-		else if ((*((int *)i)) == 2 || (*((int *)i)) == 5)
-			lay->ptr[lay->i] = 0x00c167d4;
+
 	}
 	return (NULL);
 }

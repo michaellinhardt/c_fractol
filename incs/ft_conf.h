@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 13:43:44 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 01:12:01 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@
 # define SCENE_MAX 20
 # define SCENE_IMG_MAX 50
 # define LAYER_MAX 10
+# define TOTAL_THREADS 8
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS
