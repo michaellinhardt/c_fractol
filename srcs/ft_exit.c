@@ -6,7 +6,7 @@
 
 void	exitascii(t_data *d, int err, char *msg)
 {
-	if (!d->console)
+	if (!d->args.console)
 		return ;
 	ft_putstr("🎼  ╔═════════════════════════════════════════════════════════");
 	ft_putendl("═════════════════╗");
@@ -19,12 +19,15 @@ void	exitascii(t_data *d, int err, char *msg)
 int		exit1(int err, t_data *d, char *msg)
 {
 	free_data(d);
-	if (err != 0)
-		ascii(ASC_EXIT_1);
-	else
-		ascii(ASC_EXIT_0);
-	exitascii(d, err, msg);
-	if (!d->console && err)
+	if (d->args.console)
+	{
+		if (err != 0)
+			ascii(ASC_EXIT_1);
+		else
+			ascii(ASC_EXIT_0);
+		exitascii(d, err, msg);
+	}
+	else if (!d->args.console && err)
 		ft_printf("%s\n", msg);
 	exit(err);
 	return (1);

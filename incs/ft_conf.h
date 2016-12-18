@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 01:18:02 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 22:48:42 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define WIN_TITLE "Fractol"
 # define WIN_X 1366
 # define WIN_Y 768
+# define ARGS_MAX_SIZE 2048
 
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"

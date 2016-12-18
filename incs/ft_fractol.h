@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 21:08:32 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 22:05:38 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@
 # include "ft_mlx_scene_conf.h"
 
 t_data		*data(void);
+
+void		catch_options(t_data *d, int argc, char **argv, int i);
 
 int			l1(char ico, char *name, char *info);
 int			l2(char ico, char *name, char *info, int val1);

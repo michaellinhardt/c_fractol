@@ -53,7 +53,7 @@ int			l1(char ico, char *name, char *info)
 {
 	t_data		*d;
 
-	if (!data()->console || !log_bool(ico))
+	if (!data()->args.console || !log_bool(ico))
 		return (1);
 	d = data();
 	if (ico != -2 && ico != -3)
@@ -70,7 +70,7 @@ int			l2(char ico, char *name, char *info, int val1)
 {
 	t_data		*d;
 
-	if (!data()->console || !log_bool(ico))
+	if (!data()->args.console || !log_bool(ico))
 		return (1);
 	d = data();
 	if (ico != -2 && ico != -3)

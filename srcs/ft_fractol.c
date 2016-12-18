@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:11 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/14 10:56:42 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 23:03:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@ int			main(int argc, char **argv)
 {
 	t_data	*d;
 
-	(void)argc;
-	(void)argv;
-
 	d = data();
-	d->sound = 1;
-	d->console = 1;
-	if (d->console)
+	catch_options(d, argc, argv, 0);
+	if (d->args.console)
 	{
 		ascii(ASC_LOGO);
 		ascii(ASC_INIT);

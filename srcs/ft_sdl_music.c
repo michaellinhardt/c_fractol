@@ -18,7 +18,7 @@ int			ft_init_music(t_data *d, int off)
 
 void		ft_music_start(t_data *d, int off)
 {
-	if (!d->sound)
+	if (!d->args.sound)
 		return ;
 	else if (!off && ft_init_music(d, 0))
 		d->son = Mix_LoadMUS("./music/ff7_prelude.mp3");
