@@ -12,7 +12,7 @@ int		red_cross(void)
 void	mlx_start(t_data *d, t_dmlx *m)
 {
 	m->mlx = mlx_init();
-	if (m->scene != FRACTOL_INIT)
+	if (m->scene == INTRO)
 		ft_music_start(d, 0);
 	else
 	{

@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/17 04:08:10 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/17 21:09:36 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CC		= gcc $(FLAGS)
 INCS 	= -I./incs -I./libft/includes -I./minilibx
 LIBS	= ./libft
 LIBFT 	= -L$(LIBS) -lft
+MTHREAD	= -lpthread
 LIBMLX	= -L./minilibx -lmlx -framework OpenGL -framework AppKit
 LIBMLX2	= -L./minilibx -lmlx -L/usr/X11/lib -lX11 -lXext -framework OpenGL -framework AppKit
 LANGAGE	= c
@@ -42,6 +43,7 @@ LIST	=	ft_data \
 			ft_exit \
 			ft_free \
 			ft_scene_0_intro \
+			ft_scene_1_fractol \
 			ft_fractol
 
 SRC := $(addprefix $(SRC_DIR)/, $(addsuffix .$(LANGAGE), $(LIST)))
@@ -65,7 +67,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@make -C $(LIBS)
 	@make -C ./minilibx
-	$(CC) $(OBJ) -o $@ $(FLAGS) $(INCS) $(LIBFT) $(LIBMLX) $(SDL) $(SDL_HEADER)
+	$(CC) $(OBJ) -o $@ $(FLAGS) $(INCS) $(LIBFT) $(LIBMLX) $(MTHREAD) $(SDL) $(SDL_HEADER)
 	@echo "✅  ["$(C_GOOD) $(NAME) $(C_END)"] created"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(LANGAGE)

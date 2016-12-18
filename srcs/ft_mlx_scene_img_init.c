@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:37:28 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 00:25:30 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void		scene_img_init_scene(t_dmlx *m, t_img *img, int i)
 	while ( m->scene_img[m->scene][++i].img )
 	{
 		img = &m->scene_img[0][i];
-		img->width = img->bot[0] - img->top[0];
-		img->heigh = img->bot[1] - img->top[1];
-		l1(1, "IMG_INIT"
-		, add_message(m->scene_img[0][i].name, ": calcul area width & heigh"));
 		if (img->anim_id == FADE_IN)
+		{
+			l1(1, "IMG_INIT"
+			, add_message(m->scene_img[0][i].name, ": init fade_in effect"));
 			img->fade = 255;
+		}
 	}
 }
 

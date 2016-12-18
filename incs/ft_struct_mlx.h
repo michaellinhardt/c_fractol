@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:37:50 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 00:18:46 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 enum	e_scene {
 	INTRO,
-	FRACTOL_INIT,
 	FRACTOL
 };
 
@@ -51,6 +50,7 @@ typedef struct		s_img
 {
 	void			*img;
 	char			*str;
+	int				*ptr;
 	int				bpp;
 	int				sl;
 	int				end;

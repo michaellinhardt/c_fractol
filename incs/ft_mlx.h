@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:26:50 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 23:49:55 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ void	scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img);
 
 t_img	*layer(int id, int reset);
 void	layer_add(t_img *l, t_img *i);
+
 void	scene_0_intro(t_data *d, t_dmlx *m);
+void	scene_1_fractol(t_data *d, t_dmlx *m, int i);
 
 void	intro_start_fade_out(void);
 

@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:26:37 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/17 21:08:32 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <SDL.h>
 # include <SDL_mixer.h>
 # include <stdlib.h>
+# include <pthread.h>
 # include "libft.h"
 # include "mlx.h"
 # include "ft_conf.h"

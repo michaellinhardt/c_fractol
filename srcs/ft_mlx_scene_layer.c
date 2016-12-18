@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 16:39:37 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 00:40:14 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_img			*layer(int id, int reset)
 		l[id].top[1] = 0;
 		l[id].bot[0] = WIN_X;
 		l[id].bot[1] = WIN_Y;
+		l[id].ptr = (int *)(l[id].str);
 	}
 	if (reset > 0)
 		reset_img(&l[id], reset);

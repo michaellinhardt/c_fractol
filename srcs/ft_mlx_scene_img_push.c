@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/17 20:34:41 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/18 00:53:15 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void			layer_add(t_img *l, t_img *i)
 
 	layer = (int *)l->str;
 	img = (int *)i->str;
-
 	l->i = (i->top[0] * i->top[1] + i->top[0]) - 1;
 	y = -1;
 	anim_eval(i);
