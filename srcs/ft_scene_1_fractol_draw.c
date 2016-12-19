@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 00:40:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 11:12:20 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:12:33 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 
 void		scene_1_draw_julia(t_img *lay, t_fract *param, t_fract *f)
 {
-	f->c.r = 0.485;
+	f->c.r = 0.285;
 	f->c.i = 0.01;
 	f->z.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
 	f->z.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
