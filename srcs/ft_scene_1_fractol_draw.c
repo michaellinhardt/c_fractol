@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 00:40:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 10:27:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:09:13 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 {
+	f->c.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
+	f->c.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
 	f->z.r = 0;
 	f->z.i = 0;
 	f->ite = 0;
@@ -30,33 +32,26 @@ void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 
 void		scene_1_draw_julia(t_img *lay, t_fract *param, t_fract *f)
 {
-
-// 	f->r1 = -2.1;
-// 	f->i1 = -1.2;
-// 	f->r2 = 0.6;
-// 	f->i2 = 1.2;
-//
-// 	f->c_r = f->x / f->zoom + f->x1;
-// 	f->c_i = f->y / f->zoom + f->y1;
-// 	f->z_r = 0;
-// 	f->z_i = 0;
-// 	f->i = 0;
-//
-// 	while( f->z_r * f->z_r + f->z_i * f->z_i < 4 && f->i < f->itemax )
-// 	{
-// 		z = comp_add(comp_sqr(z), c);
-// 		f->tmp = f->z_r;
-// 		f->z_r = f->z_r * f->z_r - f->z_i * f->z_i + f->c_r;
-// 		f->z_i = 2 * f->tmp * f->z_i + f->c_i;
-// 		f->i++;
-// 	}
-//
-// 	if ( f->i == f->itemax )
-// 		lay->ptr[f->posi] = 0x0091fb30;
-// 	else
-// 		lay->ptr[f->posi] = 0x00b33e66;
-
-	(void)param;
-	(void)lay;
-	(void)f;
+	f->top.r = -1;
+	while ( ++f->top.r < param->delta.r )
+	{
+		f->top.i = -1;
+		while ( ++f->top.i < param->delta.i )
+		{
+			f->c.r = 0.285;
+			f->c.i = 0.01;
+			f->z.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
+			f->z.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
+			f->ite = 0;
+			while( f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax )
+			{
+				f->z = comp_add(comp_sqr(f->z), f->c);
+				f->ite++;
+			}
+			if ( f->ite == param->itemax )
+				lay->ptr[f->posi] = 0x0091fb30;
+			else
+				lay->ptr[f->posi] = 0x00b33e66;
+		}
+	}
 }

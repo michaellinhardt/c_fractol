@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 10:14:59 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:05:10 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,20 @@ t_fract		*fractal_param(int init)
 
 	if (init == 1)
 	{
-		param.itemax = 100;
-		if ((data()->args.fractal == JULIA)
-		|| (data()->args.fractal == MANDELBROT))
+		param.itemax = 50;
+		if (data()->args.fractal == JULIA)
+		{
+			param.top.r = -1;
+			param.top.i = -1.2;
+			param.bot.r = 1;
+			param.bot.i = 1.2;
+		}
+		else if (data()->args.fractal == MANDELBROT)
 		{
 			param.top.r = -2.1;
 			param.top.i = -1.2;
-
 			param.bot.r = 0.6;
 			param.bot.i = 1.2;
-
 		}
 		param.delta.r = param.bot.r - param.top.r;
 		param.delta.i = param.bot.i - param.top.i;
@@ -78,8 +82,6 @@ static void	*calc_pixel(void *i)
 		f->posi = f->i;
 		f->pos.r = f->i % WIN_X;
 		f->pos.i = f->i / WIN_X;
-		f->c.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
-		f->c.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
 		// printf("%d -> %f,%f -> %f,%f \n", f->posi, f->pos.r, f->pos.i, f->c.r, f->c.i);
 		wich_fractol(lay, f);
 	}
