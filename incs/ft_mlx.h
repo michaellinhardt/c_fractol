@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 09:40:43 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:18:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	scene_0_intro(t_data *d, t_dmlx *m);
 void	scene_1_fractol(t_data *d, t_dmlx *m, int i);
 void	scene_1_draw_julia(t_img *lay, t_fract *param, t_fract *f);
 void	scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f);
+void	scene_1_draw_third(t_img *lay, t_fract *param, t_fract *f);
 
 void	intro_start_fade_out(void);
 

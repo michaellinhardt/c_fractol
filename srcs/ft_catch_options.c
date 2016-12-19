@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 22:17:45 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 08:51:36 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:29:32 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void		catch_this_one(t_data *d, char *arg)
 			d->args.fractal = JULIA;
 		else if (ft_strcmp(ft_strtolower(arg), "mandelbrot") == 0)
 			d->args.fractal = MANDELBROT;
+		else if (ft_strcmp(ft_strtolower(arg), "third") == 0)
+			d->args.fractal = THIRD;
 	}
 	else if (ft_strcmp(arg, "-s") == 0)
 		d->args.sound = 1;

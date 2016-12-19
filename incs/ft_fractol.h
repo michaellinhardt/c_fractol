@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 10:18:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:18:17 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 enum	e_fractal {
 	NONE,
 	JULIA,
+	THIRD,
 	MANDELBROT
 };
 

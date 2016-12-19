@@ -9,5 +9,7 @@ void	ft_display_help(void)
 	ft_putendl("  -i\t\tskip intro");
 	ft_putendl("  Fractal list:");
 	ft_putendl("  \t\tJulia");
+	ft_putendl("  \t\tMandelbrot");
+	ft_putendl("  \t\tThird");
 	exit(0);
 }

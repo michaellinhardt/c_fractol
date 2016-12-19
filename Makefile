@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/19 06:48:37 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/19 11:49:34 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,5 +94,8 @@ sdl_install :
 	unzip -o /tmp/Archive.zip -d ~/Library/Frameworks/
 
 re: fclean $(NAME)
+
+test: re
+	./fractol -i -l third
 
 .PHONY: all clean clean2 fclean re fractol sdl_install

@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 11:05:10 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 11:44:08 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ t_fract		*fractal_param(int init)
 			param.top.r = -2.1;
 			param.top.i = -1.2;
 			param.bot.r = 0.6;
+			param.bot.i = 1.2;
+		}
+		else if (data()->args.fractal == THIRD)
+		{
+			param.top.r = -1;
+			param.top.i = -1.2;
+			param.bot.r = 1;
 			param.bot.i = 1.2;
 		}
 		param.delta.r = param.bot.r - param.top.r;
@@ -60,6 +67,8 @@ static void	wich_fractol(t_img *lay, t_fract *f)
 		scene_1_draw_julia(lay, param, f);
 	else if (d->args.fractal == MANDELBROT)
 		scene_1_draw_mandelbrot(lay, param, f);
+	else if (d->args.fractal == THIRD)
+		scene_1_draw_third(lay, param, f);
 }
 
 static void	*calc_pixel(void *i)
