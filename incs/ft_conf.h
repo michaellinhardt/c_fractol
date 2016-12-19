@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 22:48:42 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 07:28:15 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # define WIN_TITLE "Fractol"
 # define WIN_X 1366
 # define WIN_Y 768
-# define ARGS_MAX_SIZE 2048
 
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"
@@ -36,7 +35,7 @@
 ** Cela évite de spam le processeur du PC pour RIEN
 */
 # define USLEEP_TIME 20000
-# define USLEEP_BOOL 0
+# define USLEEP_BOOL 1
 
 /*
 ** CONF PROPRE A MLX
@@ -47,6 +46,7 @@
 # define SCENE_IMG_MAX 50
 # define LAYER_MAX 10
 # define TOTAL_THREADS 25
+# define ITERATION_MAX 100
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS
@@ -85,7 +85,7 @@
 # define LOG_ITOW 0
 # define LOG_SCENE 0
 # define LOG_MOUSE 0
-# define LOG_LOOP 0
+# define LOG_LOOP 1
 # define LOG_FREE 0
 # define LOG_XTOI 0
 # define LOG_NEWI 0

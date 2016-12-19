@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:02 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 22:49:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 07:24:05 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 typedef struct			s_args
 {
-	char				fractal[ARGS_MAX_SIZE];
+	enum e_fractal		fractal;
 	char				got_fractal;
 	char				console;
 	char				sound;

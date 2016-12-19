@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 22:17:45 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 23:08:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 08:51:36 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ static void		catch_this_one(t_data *d, char *arg)
 {
 	if (arg[0] != '-')
 	{
-		if (ft_strlen(arg) >= ARGS_MAX_SIZE)
-			exit1(1, d, "Argument excced ARGS_MAX_SIZE in ft_conf.h");
-		else if (++d->args.got_fractal == 2)
+		if (++d->args.got_fractal == 2)
 			exit1(1, d, "Only one fractal can be passed as argument");
-		ft_strcpy(d->args.fractal, arg);
-
+		else if (ft_strcmp(ft_strtolower(arg), "julia") == 0)
+			d->args.fractal = JULIA;
+		else if (ft_strcmp(ft_strtolower(arg), "mandelbrot") == 0)
+			d->args.fractal = MANDELBROT;
 	}
 	else if (ft_strcmp(arg, "-s") == 0)
 		d->args.sound = 1;
@@ -41,4 +41,6 @@ void		catch_options(t_data *d, int argc, char **argv, int i)
 {
 	while ( ++i < argc )
 		catch_this_one(d, argv[i]);
+	if (d->args.fractal == NONE)
+		ft_display_help();
 }
