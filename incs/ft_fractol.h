@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 08:34:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/19 10:18:24 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ typedef struct		s_fract
 	t_comp			delta;
 	int				itemax;
 	int				ite;
-	int				zoom;
+	int				i;
 	t_comp			z;
 	t_comp			c;
+	t_comp			tmp;
 }					t_fract;
 
 # include <fcntl.h>
