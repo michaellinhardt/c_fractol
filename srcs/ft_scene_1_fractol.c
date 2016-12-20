@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/20 04:03:19 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/20 10:52:25 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ static void	*calc_pixel(void *i)
 		f->posi = f->i;
 		f->pos.r = f->i % WIN_X;
 		f->pos.i = f->i / WIN_X;
-		// printf("%d -> %f,%f -> %f,%f \n", f->posi, f->pos.r, f->pos.i, f->c.r, f->c.i);
 		wich_fractol(lay, f);
 	}
 	return (NULL);
@@ -103,7 +102,6 @@ void		scene_1_fractol(t_data *d, t_dmlx *m, int i)
 	pthread_t threads[TOTAL_THREADS];
 
 	layer(2, 1);
-	fractal_param(1);
 	while( ++i < TOTAL_THREADS )
 	{
 		fractal(1, i);

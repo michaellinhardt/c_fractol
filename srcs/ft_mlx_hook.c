@@ -4,6 +4,8 @@ int		mouseo_hook(int x, int y, t_data *d)
 {
 	d->mlx.input.mo_x = x;
 	d->mlx.input.mo_y = y;
+	if (d->mlx.scene == INTRO)
+		return (0);
 	if (d->mlx.input.mlast_x == 0)
 	{
 		d->mlx.input.mlast_x = x;
@@ -39,6 +41,8 @@ int		mousep_hook(int btn, int x, int y, t_data *d)
 	(void)y;
 	(btn == 1) ? d->mlx.input.mleft = 1 : 0;
 	(btn == 2) ? d->mlx.input.mright = 1 : 0;
+	// if (btn == 4)
+
 	return (0);
 }
 

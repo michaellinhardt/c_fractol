@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 09:06:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/20 10:43:38 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@
 # define LOG_GENERAL 0
 # define LOG_KEY 0
 # define LOG_ITOW 0
-# define LOG_SCENE 0
+# define LOG_SCENE 1
 # define LOG_MOUSE 0
 # define LOG_LOOP 1
 # define LOG_FREE 0
