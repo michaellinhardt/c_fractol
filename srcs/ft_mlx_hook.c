@@ -2,10 +2,19 @@
 
 int		mouseo_hook(int x, int y, t_data *d)
 {
-	(void)x;
-	(void)y;
 	d->mlx.input.mo_x = x;
 	d->mlx.input.mo_y = y;
+	if (d->mlx.input.mlast_x == 0)
+	{
+		d->mlx.input.mlast_x = x;
+		d->mlx.input.mlast_y = y;
+		return (0);
+	}
+	d->mlx.input.move_x = x - d->mlx.input.mlast_x;
+	d->mlx.input.move_y = y - d->mlx.input.mlast_y;
+	d->mlx.input.mlast_x = x;
+	d->mlx.input.mlast_y = y;
+	data()->mlx.loopstop = loop(1) + 5;
 	return (0);
 }
 

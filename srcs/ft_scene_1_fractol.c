@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 11:44:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/20 04:03:19 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ t_fract		*fractal_param(int init)
 
 	if (init == 1)
 	{
-		param.itemax = 50;
+		param.itemax = 400;
+		param.itemin = 50;
 		if (data()->args.fractal == JULIA)
 		{
 			param.top.r = -1;

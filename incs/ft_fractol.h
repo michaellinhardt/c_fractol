@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 11:18:17 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/20 03:40:13 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct		s_fract
 	t_comp			bot;
 	t_comp			delta;
 	int				itemax;
+	int				itemin;
 	int				ite;
 	int				i;
 	t_comp			z;
