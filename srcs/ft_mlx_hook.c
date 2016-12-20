@@ -14,7 +14,7 @@ int		mouseo_hook(int x, int y, t_data *d)
 	d->mlx.input.move_y = y - d->mlx.input.mlast_y;
 	d->mlx.input.mlast_x = x;
 	d->mlx.input.mlast_y = y;
-	data()->mlx.loopstop = loop(1) + 5;
+	data()->mlx.loopstop = loop(1) + 1;
 	return (0);
 }
 
