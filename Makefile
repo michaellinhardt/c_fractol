@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/19 11:49:34 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/21 11:17:44 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ LIST	=	ft_data \
 			ft_mlx_loop \
 			ft_mlx_hook \
 			ft_mlx_img \
+			ft_mlx_zoom \
 			ft_mlx_scene \
 			ft_mlx_scene_img \
 			ft_mlx_scene_img_push \

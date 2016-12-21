@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:03 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/20 03:56:30 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/21 10:49:54 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,8 @@ typedef struct		s_input
 	char			up;
 	char			down;
 	char			shift;
-	int				mlast_x;
-	int				mlast_y;
-	int				move_x;
-	int				move_y;
+	int				wheelup;
+	int				wheeldown;
 	int				mo_x;
 	int				mo_y;
 	int				mr_x;

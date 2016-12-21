@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/20 10:52:25 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/21 12:51:26 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_fract		*fractal_param(int init)
 
 	if (init == 1)
 	{
-		param.itemax = 400;
+		param.itemax = 100;
 		param.itemin = 50;
 		if (data()->args.fractal == JULIA)
 		{
@@ -27,23 +27,19 @@ t_fract		*fractal_param(int init)
 			param.bot.r = 1;
 			param.bot.i = 1.2;
 		}
-		else if (data()->args.fractal == MANDELBROT)
+		else if (data()->args.fractal == MANDELBROT
+		|| data()->args.fractal == THIRD)
 		{
 			param.top.r = -2.1;
 			param.top.i = -1.2;
 			param.bot.r = 0.6;
 			param.bot.i = 1.2;
 		}
-		else if (data()->args.fractal == THIRD)
-		{
-			param.top.r = -1;
-			param.top.i = -1.2;
-			param.bot.r = 1;
-			param.bot.i = 1.2;
-		}
+	}
+	if (init > 0)
+	{
 		param.delta.r = param.bot.r - param.top.r;
 		param.delta.i = param.bot.i - param.top.i;
-
 	}
 	return (&param);
 }
@@ -87,6 +83,11 @@ static void	*calc_pixel(void *i)
 	portion = (WIN_X * WIN_Y) / TOTAL_THREADS;
 	f->i = portion * (*((int *)i))- 1;
 	param->i = ((*((int *)i)) == (TOTAL_THREADS - 1)) ? WIN_X * WIN_Y : f->i + portion;
+	if (data()->args.fractal == JULIA)
+	{
+		f->c.r = ((double)data()->mlx.input.mo_x / (double)WIN_X) * param->delta.r + param->top.r;
+		f->c.i = ((double)data()->mlx.input.mo_y / (double)WIN_Y) * param->delta.i + param->top.i;
+	}
 	while ( ++f->i < param->i )
 	{
 		f->posi = f->i;

@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/20 10:43:38 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/21 14:32:42 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@
 */
 # define CONSOLE_LOG 0
 # define WIN_TITLE "Fractol"
-# define WIN_X 1366
-# define WIN_Y 768
+// # define WIN_X 1366
+// # define WIN_Y 768
+# define WIN_X 800
+# define WIN_Y 600
+# define ZOOM_VALUE 0.1
 
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"
@@ -45,7 +48,7 @@
 # define SCENE_MAX 20
 # define SCENE_IMG_MAX 50
 # define LAYER_MAX 10
-# define TOTAL_THREADS 25
+# define TOTAL_THREADS 8
 # define ITERATION_MAX 100
 
 /*

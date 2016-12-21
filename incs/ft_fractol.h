@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/20 10:41:30 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/21 11:23:00 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct		s_fract
 	t_comp			top;
 	t_comp			bot;
 	t_comp			delta;
+	t_comp			dist;
+	t_comp			old_z;
 	int				itemax;
 	int				itemin;
 	int				ite;
@@ -61,6 +63,9 @@ t_data				*data(void);
 t_fract				*fractal(int init, int thread);
 void				catch_options(t_data *d, int argc, char **argv, int i);
 t_fract				*fractal_param(int init);
+
+void				zoomin(t_dmlx *m, t_fract *param);
+void				zoomout(t_dmlx *m, t_fract *param);
 
 t_comp				comp_sqr(t_comp a);
 t_comp				comp_add(t_comp a, t_comp b);
