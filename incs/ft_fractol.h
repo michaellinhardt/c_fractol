@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/21 11:23:00 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/24 14:15:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_data				*data(void);
 t_fract				*fractal(int init, int thread);
 void				catch_options(t_data *d, int argc, char **argv, int i);
 t_fract				*fractal_param(int init);
+void				fractal_move(t_fract *param);
 
 void				zoomin(t_dmlx *m, t_fract *param);
 void				zoomout(t_dmlx *m, t_fract *param);

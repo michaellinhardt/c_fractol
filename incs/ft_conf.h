@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/21 14:32:42 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/24 14:19:53 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 // # define WIN_Y 768
 # define WIN_X 800
 # define WIN_Y 600
-# define ZOOM_VALUE 0.1
 
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"
@@ -49,7 +48,14 @@
 # define SCENE_IMG_MAX 50
 # define LAYER_MAX 10
 # define TOTAL_THREADS 8
-# define ITERATION_MAX 100
+
+/*
+** PARAM FRACTOL
+*/
+# define ZOOM_VALUE 0.01
+# define MOVE_VALUE 0.01
+# define ITERATION_MAX 50
+# define ITERATION_MIN 30
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS

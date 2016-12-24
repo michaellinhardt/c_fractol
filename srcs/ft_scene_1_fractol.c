@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/21 12:51:26 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/24 14:30:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ t_fract		*fractal_param(int init)
 
 	if (init == 1)
 	{
-		param.itemax = 100;
-		param.itemin = 50;
+		param.itemax = ITERATION_MAX;
+		param.itemin = ITERATION_MIN;
 		if (data()->args.fractal == JULIA)
 		{
 			param.top.r = -1;
@@ -61,7 +61,12 @@ static void	wich_fractol(t_img *lay, t_fract *f)
 	d = data();
 	param = fractal_param(0);
 	if (d->args.fractal == JULIA)
-		scene_1_draw_julia(lay, param, f);
+	{
+		f->c.r = ((double)data()->mlx.input.mo_x / (double)WIN_X) * param->delta.r + param->top.r;
+		f->c.i = ((double)data()->mlx.input.mo_y / (double)WIN_Y) * param->delta.i + param->top.i;
+		while ( ++f->i < param->i )
+			scene_1_draw_julia(lay, param, f);
+	}
 	else if (d->args.fractal == MANDELBROT)
 		scene_1_draw_mandelbrot(lay, param, f);
 	else if (d->args.fractal == THIRD)
@@ -80,21 +85,21 @@ static void	*calc_pixel(void *i)
 	lay = layer(2, 0);
 	f = fractal(0, *((int *)i));
 	param = fractal_param(0);
-	portion = (WIN_X * WIN_Y) / TOTAL_THREADS;
-	f->i = portion * (*((int *)i))- 1;
-	param->i = ((*((int *)i)) == (TOTAL_THREADS - 1)) ? WIN_X * WIN_Y : f->i + portion;
-	if (data()->args.fractal == JULIA)
+	fractal_move(param);
+	if (data()->mlx.input.wheelup)
+		zoomin(&data()->mlx, fractal_param(0));
+	if (data()->mlx.input.wheeldown)
+		zoomout(&data()->mlx, fractal_param(0));
+	if (d->args.fractal == JULIA)
 	{
 		f->c.r = ((double)data()->mlx.input.mo_x / (double)WIN_X) * param->delta.r + param->top.r;
 		f->c.i = ((double)data()->mlx.input.mo_y / (double)WIN_Y) * param->delta.i + param->top.i;
 	}
+	portion = (WIN_X * WIN_Y) / TOTAL_THREADS;
+	f->i = portion * (*((int *)i))- 1;
+	param->i = ((*((int *)i)) == (TOTAL_THREADS - 1)) ? WIN_X * WIN_Y : f->i + portion;
 	while ( ++f->i < param->i )
-	{
-		f->posi = f->i;
-		f->pos.r = f->i % WIN_X;
-		f->pos.i = f->i / WIN_X;
 		wich_fractol(lay, f);
-	}
 	return (NULL);
 }
 
@@ -113,9 +118,6 @@ void		scene_1_fractol(t_data *d, t_dmlx *m, int i)
 	i = -1;
 	while( ++i < TOTAL_THREADS )
 		pthread_join(threads[i], (void **)NULL);
-	// itow(layer(0, 0)->img, 0, 0, "push layer 0 to window");
-	// scene_img_push(d, m, -1, (t_img *)NULL);
-	// itow(layer(1, 0)->img, 0, 0, "push layer 1 to window");
 	itow(layer(2, 0)->img, 0, 0, "push layer 1 to window");
 	loop(0);
 	(void)d;

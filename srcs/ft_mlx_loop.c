@@ -18,6 +18,17 @@ int		loop(char etat)
 	return (1);
 }
 
+int		loopstop(char total)
+{
+	t_dmlx *m;
+
+	m = &(data()->mlx);
+	m->loopstop = total;
+	if (m->loopstop && !m->loop)
+		loop(1);
+	return (1);
+}
+
 int		loop_hook(t_data *d)
 {
 	t_dmlx *m;

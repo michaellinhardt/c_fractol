@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/19 11:18:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/24 13:54:42 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		mouser_hook(int btn, int x, int y, t_data *d);
 
 int		loop_hook(t_data *d);
 int		loop(char etat);
+int		loopstop(char total);
 
 void	scene(t_data *d, t_dmlx *m);
 void	scene_img(t_data *d, t_dmlx *m);

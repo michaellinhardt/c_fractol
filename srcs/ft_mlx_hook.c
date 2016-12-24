@@ -6,7 +6,7 @@ int		mouseo_hook(int x, int y, t_data *d)
 		return (0);
 	d->mlx.input.mo_x = x;
 	d->mlx.input.mo_y = y;
-	data()->mlx.loopstop = loop(1) + 5;
+	loopstop(5);
 	return (0);
 }
 
@@ -16,18 +16,29 @@ int		keyr_hook(int key, t_data *d)
 		exit1(0, d, "by pressing echap");
 	else if (d->mlx.scene > INTRO)
 	{
-		if (key == 116)
-			zoomin(&data()->mlx, fractal_param(0));
-		if (key == 121)
-			zoomout(&data()->mlx, fractal_param(0));
-		data()->mlx.loopstop = loop(1) + 5;
+		(key == 123 && loopstop(5)) ? d->mlx.input.left = 0 : 0;
+		(key == 124 && loopstop(5)) ? d->mlx.input.right = 0 : 0;
+		(key == 125 && loopstop(5)) ? d->mlx.input.down = 0 : 0;
+		(key == 126 && loopstop(5)) ? d->mlx.input.up = 0 : 0;
+		if (key == 116 && loopstop(5))
+			d->mlx.input.wheelup = 0;
+		if (key == 121 && loopstop(5))
+			d->mlx.input.wheeldown = 0;
 	}
 	return (0);
 }
 
 int		keyp_hook(int key, t_data *d)
 {
-	return (d->mlx.loop += 0 * key);
+	(key == 123 && loopstop(5)) ? d->mlx.input.left = 1 : 0;
+	(key == 124 && loopstop(5)) ? d->mlx.input.right = 1 : 0;
+	(key == 125 && loopstop(5)) ? d->mlx.input.down = 1 : 0;
+	(key == 126 && loopstop(5)) ? d->mlx.input.up = 1 : 0;
+	if (key == 116 && loopstop(5))
+		d->mlx.input.wheelup = 1;
+	if (key == 121 && loopstop(5))
+		d->mlx.input.wheeldown = 1;
+	return (0);
 }
 
 int		mousep_hook(int btn, int x, int y, t_data *d)
@@ -42,7 +53,7 @@ int		mousep_hook(int btn, int x, int y, t_data *d)
 			zoomin(&data()->mlx, fractal_param(0));
 		if (btn == 5)
 			zoomout(&data()->mlx, fractal_param(0));
-		data()->mlx.loopstop = loop(1) + 5;
+		loopstop(5);
 	}
 	return (0);
 }
