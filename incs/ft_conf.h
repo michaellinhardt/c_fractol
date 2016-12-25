@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/24 14:19:53 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 20:26:32 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 */
 # define CONSOLE_LOG 0
 # define WIN_TITLE "Fractol"
-// # define WIN_X 1366
-// # define WIN_Y 768
 # define WIN_X 800
 # define WIN_Y 600
+# define WIN_X_MAX 1920
+# define WIN_Y_MAX 1200
 
 # define RED "\033[0;31m"
 # define WHITE "\033[1;37m"
@@ -54,8 +54,8 @@
 */
 # define ZOOM_VALUE 0.01
 # define MOVE_VALUE 0.01
-# define ITERATION_MAX 50
-# define ITERATION_MIN 30
+# define ITE_MAX 50
+# define ITE_MIN 30
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS

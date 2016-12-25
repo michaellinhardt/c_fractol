@@ -1,7 +1,15 @@
-/* FONCTION PERMETANT DE FERMER LE PROGRAMME PROPREMENT EN LANCANT LES FREE
- * exit1 free les donné data
- * exit2 free aussi le char * qu'il reçoit dans le cas d'un leave sur gnl
- */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/25 20:55:42 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:57:50 by mlinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fractol.h"
 
 void	exitascii(t_data *d, int err, char *msg)

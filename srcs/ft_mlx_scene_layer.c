@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 00:40:14 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 17:25:10 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		reset_img(t_img *img, int reset)
 		color = 0x00000000;
 	img->i = -1;
 	ptr = (int *)img->str;
-	while (++img->i < WIN_X * WIN_Y)
+	while (++img->i < data()->mlx.winx * data()->mlx.winy)
 		ptr[img->i] = color;
 }
 
@@ -36,11 +36,12 @@ t_img			*layer(int id, int reset)
 	if (!l[id].img)
 	{
 		ft_bzero(&l[id], sizeof(t_img));
-		l[id].img = mlx_new_img(&data()->mlx, &l[id], WIN_X, WIN_Y);
+		l[id].img = mlx_new_img(&data()->mlx, &l[id]
+									, data()->mlx.winx, data()->mlx.winy);
 		l[id].top[0] = 0;
 		l[id].top[1] = 0;
-		l[id].bot[0] = WIN_X;
-		l[id].bot[1] = WIN_Y;
+		l[id].bot[0] = data()->mlx.winx;
+		l[id].bot[1] = data()->mlx.winy;
 		l[id].ptr = (int *)(l[id].str);
 	}
 	if (reset > 0)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mlx_init.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/25 20:58:26 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:58:26 by mlinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fractol.h"
 
 int		red_cross(void)
@@ -19,7 +31,7 @@ void	mlx_start(t_data *d, t_dmlx *m)
 		ft_music_start(d, 0);
 		ft_music_start(d, 1);
 	}
-	m->win = mlx_new_window(m->mlx, WIN_X, WIN_Y, WIN_TITLE);
+	m->win = mlx_new_window(m->mlx, d->mlx.winx, d->mlx.winy, WIN_TITLE);
 	l1(10, "D->MLX", "get mlx_init() return");
 	l1(10, "D->WIN", "get the mlx_new_window return");
 	mlx_hook(m->win, 2, (1L << 0), keyp_hook, d);

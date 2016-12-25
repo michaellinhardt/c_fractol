@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 00:40:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/24 14:28:58 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 21:06:53 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		fractal_move(t_fract *param)
 
 static void	put_pixel(t_img *lay, t_fract *param, t_fract *f)
 {
-	if ( f->ite >= param->itemin && f->ite <= param->itemax )
+	if (f->ite >= param->itemin && f->ite <= param->itemax)
 		lay->ptr[f->i] = 0x00000000 + (f->ite * 1000);
 	else
 		lay->ptr[f->i] = 0x00000000 + (f->ite * 10);
@@ -50,14 +50,14 @@ static void	put_pixel(t_img *lay, t_fract *param, t_fract *f)
 
 void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 {
-	f->pos.r = f->i % WIN_X;
-	f->pos.i = f->i / WIN_X;
-	f->c.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
-	f->c.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
+	f->pos.r = f->i % data()->mlx.winx;
+	f->pos.i = f->i / data()->mlx.winx;
+	f->c.r = (f->pos.r / data()->mlx.winx) * param->delta.r + param->top.r;
+	f->c.i = (f->pos.i / data()->mlx.winy) * param->delta.i + param->top.i;
 	f->z.r = 0;
 	f->z.i = 0;
 	f->ite = 0;
-	while( f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax )
+	while (f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax)
 	{
 		f->z = comp_add(comp_sqr(f->z), f->c);
 		f->ite++;
@@ -67,15 +67,14 @@ void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 
 void		scene_1_draw_julia(t_img *lay, t_fract *param, t_fract *f)
 {
-	f->pos.r = f->i % WIN_X;
-	f->pos.i = f->i / WIN_X;
-	f->z.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
-	f->z.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
+	f->pos.r = f->i % data()->mlx.winx;
+	f->pos.i = f->i / data()->mlx.winx;
+	f->z.r = (f->pos.r / data()->mlx.winx) * param->delta.r + param->top.r;
+	f->z.i = (f->pos.i / data()->mlx.winy) * param->delta.i + param->top.i;
 	f->ite = 0;
-	 while( f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax
-	&& f->dist.r < 1e10 && f->dist.i < 1e10 )
+	while (f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax
+	&& f->dist.r < 1e10 && f->dist.i < 1e10)
 	{
-
 		f->z = comp_add(comp_sqr(f->z), f->c);
 		f->old_z.r = 2.0 * (f->z.r * f->old_z.r - f->z.i * f->old_z.i);
 		f->old_z.i = 2.0 * (f->z.i * f->old_z.r - f->z.r * f->old_z.i);
@@ -88,14 +87,14 @@ void		scene_1_draw_julia(t_img *lay, t_fract *param, t_fract *f)
 
 void		scene_1_draw_third(t_img *lay, t_fract *param, t_fract *f)
 {
-	f->pos.r = f->i % WIN_X;
-	f->pos.i = f->i / WIN_X;
-	f->c.r = (f->pos.r / WIN_X) * param->delta.r + param->top.r;
-	f->c.i = (f->pos.i / WIN_Y) * param->delta.i + param->top.i;
+	f->pos.r = f->i % data()->mlx.winx;
+	f->pos.i = f->i / data()->mlx.winx;
+	f->c.r = (f->pos.r / data()->mlx.winx) * param->delta.r + param->top.r;
+	f->c.i = (f->pos.i / data()->mlx.winy) * param->delta.i + param->top.i;
 	f->z.r = 0;
 	f->z.i = 0;
 	f->ite = 0;
-	while( f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax )
+	while (f->z.r * f->z.r + f->z.i * f->z.i < 4 && f->ite < param->itemax)
 	{
 		f->z.r = FABS(f->z.r);
 		f->z.i = FABS(f->z.i);

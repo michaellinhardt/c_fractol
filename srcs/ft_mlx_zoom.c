@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 11:17:47 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/24 13:20:24 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 16:51:11 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,6 @@ void		zoomin(t_dmlx *m, t_fract *param)
 	param->top.i += ZOOM_VALUE;
 	param->bot.r -= ZOOM_VALUE;
 	param->bot.i -= ZOOM_VALUE;
-	// if (m->input.mo_x < (WIN_X / 2))
-	// {
-	// 	param->top.r += ZOOM_VALUE / 2;
-	// }
-	// else if (m->input.mo_x > (WIN_X / 2))
-	// {
-	// 	param->top.r -= ZOOM_VALUE / 2;
-	// }
-	// if (m->input.mo_y < (WIN_Y / 2))
-	// {
-	// 	param->top.i += ZOOM_VALUE / 2;
-	// }
-	// else if (m->input.mo_y > (WIN_Y / 2))
-	// {
-	// 	param->top.i -= ZOOM_VALUE / 2;
-	// }
 	fractal_param(2);
 	(void)m;
 	(void)param;

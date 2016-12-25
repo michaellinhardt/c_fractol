@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mlx_scene.c                                     :+:      :+:    :+:   */
+/*   ft_mlx_hook_click.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/25 20:58:59 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 20:59:00 by mlinhard         ###   ########.fr       */
+/*   Created: 2016/12/25 20:56:55 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:57:03 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fractol.h"
 
-void		scene(t_data *d, t_dmlx *m)
+void	mouse_check_img(t_dmlx *m, int btn, t_img *img, int i)
 {
-	if (m->scene == FRACTOL)
-		scene_1_fractol(d, m, -1);
-	else if (m->scene == INTRO)
-		scene_0_intro(d, m);
-	(void)d;
+	while (m->scene_img[m->scene][++i].img)
+	{
+		img = &m->scene_img[0][i];
+		if (m->input.mode == 0
+		&& (img->mouse_btn == 3 || (img->mouse_btn == btn))
+		&& (m->input.mr_x >= img->top[0] && m->input.mr_x <= img->bot[0])
+		&& (m->input.mr_y >= img->top[1] && m->input.mr_y <= img->bot[1]))
+			img->mouse_action();
+	}
 }

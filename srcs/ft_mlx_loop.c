@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mlx_loop.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/25 20:58:38 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:58:40 by mlinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fractol.h"
 
 int		loop(char etat)
@@ -32,7 +44,6 @@ int		loopstop(char total)
 int		loop_hook(t_data *d)
 {
 	t_dmlx *m;
-
 
 	m = &d->mlx;
 	if (USLEEP_BOOL && m->loop == 0 && !usleep(USLEEP_TIME))

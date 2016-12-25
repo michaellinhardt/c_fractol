@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mlx_hook.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/25 20:57:15 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:57:16 by mlinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fractol.h"
 
 int		mouseo_hook(int x, int y, t_data *d)
@@ -56,19 +68,6 @@ int		mousep_hook(int btn, int x, int y, t_data *d)
 		loopstop(5);
 	}
 	return (0);
-}
-
-void	mouse_check_img(t_dmlx *m, int btn, t_img *img, int i)
-{
-	while ( m->scene_img[m->scene][++i].img )
-	{
-		img = &m->scene_img[0][i];
-		if (m->input.mode == 0
-		&& (img->mouse_btn == 3 || (img->mouse_btn == btn))
-		&& (m->input.mr_x >= img->top[0] && m->input.mr_x <= img->bot[0])
-		&& (m->input.mr_y >= img->top[1] && m->input.mr_y <= img->bot[1]))
-			img->mouse_action();
-	}
 }
 
 int		mouser_hook(int btn, int x, int y, t_data *d)

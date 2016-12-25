@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_mlx_img.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/12/25 20:58:02 by mlinhard          #+#    #+#             */
+/*   Updated: 2016/12/25 20:58:14 by mlinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fractol.h"
 
 void	*mlx_new_img(t_dmlx *m, t_img *img, int width, int heigh)
@@ -20,7 +32,8 @@ void	*mlx_xpmtostruct(t_dmlx *m, t_img *img, char *file)
 	if (!(img->img) && LOG_XTOI == 1)
 		l1(8, "GET XPM IMG", file);
 	if (!(img->img)
-	&& !(img->img = mlx_xpm_file_to_image(m->mlx, file, &img->width, &img->heigh)))
+	&& !(img->img = mlx_xpm_file_to_image(m->mlx, file
+												, &img->width, &img->heigh)))
 		exit1(1, data(), "Cant load xpm file");
 	if (!(img->str) && LOG_XTOI == 1)
 		l1(8, "GET XPM STR", file);

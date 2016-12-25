@@ -6,43 +6,12 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/24 14:15:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 21:08:50 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_FRACTOL_H
 # define FT_FRACTOL_H
-
-enum	e_fractal {
-	NONE,
-	JULIA,
-	THIRD,
-	MANDELBROT
-};
-
-typedef struct		s_comp
-{
-	double			r;
-	double			i;
-}					t_comp;
-
-typedef struct		s_fract
-{
-	int				posi;
-	t_comp			pos;
-	t_comp			top;
-	t_comp			bot;
-	t_comp			delta;
-	t_comp			dist;
-	t_comp			old_z;
-	int				itemax;
-	int				itemin;
-	int				ite;
-	int				i;
-	t_comp			z;
-	t_comp			c;
-	t_comp			tmp;
-}					t_fract;
 
 # include <fcntl.h>
 # include <dirent.h>
@@ -54,6 +23,7 @@ typedef struct		s_fract
 # include "libft.h"
 # include "mlx.h"
 # include "ft_conf.h"
+# include "ft_struct_fractol.h"
 # include "ft_struct_mlx.h"
 # include "ft_struct_data.h"
 # include "ft_mlx.h"

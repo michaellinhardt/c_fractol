@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 04:11:31 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 00:53:15 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 21:00:30 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			layer_add(t_img *l, t_img *i)
 
 	layer = (int *)l->str;
 	img = (int *)i->str;
-	l->i = (i->top[0] * i->top[1] + i->top[0]) - 1;
+	l->i = (data()->mlx.winx * i->pos[1] + i->pos[0]) - 1;
 	y = -1;
 	anim_eval(i);
 	while (++y < i->heigh)
@@ -48,14 +48,14 @@ void			layer_add(t_img *l, t_img *i)
 			i->str[(y * i->width + x) * 4 + 3] = i->fade;
 			layer[++(l->i)] = img[y * i->width + x];
 		}
-		l->i = l->i - i->width + WIN_X;
+		l->i = l->i - i->width + data()->mlx.winx;
 	}
 }
 
-void		scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img)
+void			scene_img_push(t_data *d, t_dmlx *m, int i, t_img *img)
 {
 	img = layer(1, 1);
-	while ( m->scene_img[m->scene][++i].img )
+	while (m->scene_img[m->scene][++i].img)
 		if (m->scene_img[m->scene][i].status == 0)
 			layer_add(img, &m->scene_img[m->scene][i]);
 	(void)d;

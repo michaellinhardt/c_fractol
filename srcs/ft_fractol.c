@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:11 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/18 23:03:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 16:53:51 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int			main(int argc, char **argv)
 	t_data	*d;
 
 	d = data();
+	d->mlx.winx = WIN_X;
+	d->mlx.winy = WIN_Y;
 	catch_options(d, argc, argv, 0);
 	if (d->args.console)
 	{

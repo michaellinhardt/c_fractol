@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:33:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/24 13:54:42 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 20:57:30 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		keyr_hook(int key, t_data *d);
 int		keyp_hook(int key, t_data *d);
 int		mousep_hook(int btn, int x, int y, t_data *d);
 int		mouser_hook(int btn, int x, int y, t_data *d);
+void	mouse_check_img(t_dmlx *m, int btn, t_img *img, int i);
 
 int		loop_hook(t_data *d);
 int		loop(char etat);

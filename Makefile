@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/21 11:17:44 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/25 21:08:21 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ LIST	=	ft_data \
 			ft_mlx_init \
 			ft_mlx_loop \
 			ft_mlx_hook \
+			ft_mlx_hook_click \
 			ft_mlx_img \
 			ft_mlx_zoom \
 			ft_mlx_scene \
@@ -96,7 +97,7 @@ sdl_install :
 
 re: fclean $(NAME)
 
-test: re
-	./fractol -i -l third
+test: $(NAME)
+	./fractol julia
 
 .PHONY: all clean clean2 fclean re fractol sdl_install
