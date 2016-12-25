@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 22:17:45 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 20:53:19 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 23:46:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void			catch_options(t_data *d, int argc, char **argv, int i)
 	if (d->args.fractal == NONE)
 		ft_display_help();
 	fractal_param(1);
+	fractal_param(0)->zoom = 1;
 }

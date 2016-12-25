@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 00:40:00 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 22:32:15 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 23:49:38 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void		scene_1_draw_mandelbrot(t_img *lay, t_fract *param, t_fract *f)
 {
 	f->pos.r = f->i % data()->mlx.winx;
 	f->pos.i = f->i / data()->mlx.winx;
-	f->c.r = (f->pos.r / data()->mlx.winx) * param->delta.r + param->top.r;
-	f->c.i = (f->pos.i / data()->mlx.winy) * param->delta.i + param->top.i;
+	f->c.r = (f->pos.r / data()->mlx.winx) * param->delta.r * param->zoom + param->top.r * param->zoom;
+	f->c.i = (f->pos.i / data()->mlx.winy) * param->delta.i * param->zoom + param->top.i * param->zoom;
 	f->z.r = 0;
 	f->z.i = 0;
 	f->ite = 0;

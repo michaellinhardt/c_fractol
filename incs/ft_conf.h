@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 22:29:25 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/26 00:09:09 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@
 /*
 ** PARAM FRACTOL
 */
-# define ZOOM_VALUE 0.01
+# define ZOOM_VALUE 0.003
 # define MOVE_VALUE 0.01
-# define ITE_MAX 50
-# define ITE_MIN 30
+# define ITE_MAX 60
+# define ITE_MIN 45
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS

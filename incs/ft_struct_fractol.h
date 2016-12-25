@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 21:08:03 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 23:41:16 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct		s_fract
 	int				itemin;
 	int				ite;
 	int				i;
+	double			zoom;
 	t_comp			z;
 	t_comp			c;
 	t_comp			tmp;

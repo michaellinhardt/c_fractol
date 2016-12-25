@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 22:32:44 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 23:49:22 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,9 @@ static void	*calc_pixel(void *i)
 	if (data()->args.fractal == JULIA)
 	{
 		f->c.r = ((double)data()->mlx.input.mo_x / (double)data()->mlx.winx)
-		* param->delta.r + param->top.r;
+		* param->delta.r * param->zoom + param->top.r * param->zoom;
 		f->c.i = ((double)data()->mlx.input.mo_y / (double)data()->mlx.winy)
-		* param->delta.i + param->top.i;
+		* param->delta.i * param->zoom + param->top.i * param->zoom;
 	}
 	portion = (data()->mlx.winx * data()->mlx.winy) / TOTAL_THREADS;
 	f->i = portion * (*((int *)i)) - 1;
