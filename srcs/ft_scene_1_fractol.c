@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 21:06:16 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/25 22:32:44 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_fract		*fractal_param(int init)
 
 	if (init == 0)
 		return (&param);
-	if (init == 1 && (param.itemax = ITE_MAX || 1))
+	if (init == 1 && ((param.itemax = ITE_MAX) || 1))
 	{
-		if ((param.itemin = ITE_MIN || 1) && data()->args.fractal == JULIA)
+		if (((param.itemin = ITE_MIN) || 1) && data()->args.fractal == JULIA)
 		{
 			param.top.r = -1;
 			param.top.i = -1.2;
@@ -66,6 +66,8 @@ static void	wich_fractol(t_img *lay, t_fract *f)
 	else if (d->args.fractal == THIRD)
 		while (++f->i < param->i)
 			scene_1_draw_third(lay, param, f);
+	else
+		exit1(1, data(), "Unable to find the asked fractal");
 }
 
 static void	*calc_pixel(void *i)
