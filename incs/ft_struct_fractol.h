@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:51 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 23:41:16 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/28 02:31:02 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 enum	e_fractal {
 	NONE,
-	JULIA,
 	THIRD,
-	MANDELBROT
+	MANDELBROT,
+	JULIA,
+	BONUS1,
+	BONUS2
 };
 
 typedef struct		s_comp
@@ -31,6 +33,7 @@ typedef struct		s_fract
 	int				posi;
 	t_comp			pos;
 	t_comp			top;
+	t_comp			mousediff;
 	t_comp			bot;
 	t_comp			delta;
 	t_comp			dist;

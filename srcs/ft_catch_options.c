@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 22:17:45 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 23:46:39 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/28 02:49:08 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,26 @@ static void		window_size(t_dmlx *m, char *arg, int i)
 		exit1(1, data(), "window size_y must be under 1200");
 }
 
+static void		catch_this_one2(t_data *d, char *arg)
+{
+	if (++d->args.got_fractal == 2 && !(d->args.console = 0))
+		exit1(1, d, "Only one fractal can be passed as argument");
+	else if (ft_strcmp(ft_strtolower(arg), "julia") == 0)
+		d->args.fractal = JULIA;
+	else if (ft_strcmp(ft_strtolower(arg), "mandelbrot") == 0)
+		d->args.fractal = MANDELBROT;
+	else if (ft_strcmp(ft_strtolower(arg), "third") == 0)
+		d->args.fractal = THIRD;
+	else if (ft_strcmp(ft_strtolower(arg), "bonus1") == 0)
+		d->args.fractal = BONUS1;
+	else if (ft_strcmp(ft_strtolower(arg), "bonus2") == 0)
+		d->args.fractal = BONUS2;
+}
+
 static void		catch_this_one(t_data *d, char *arg)
 {
 	if (arg[0] != '-')
-	{
-		if (++d->args.got_fractal == 2 && !(d->args.console = 0))
-			exit1(1, d, "Only one fractal can be passed as argument");
-		else if (ft_strcmp(ft_strtolower(arg), "julia") == 0)
-			d->args.fractal = JULIA;
-		else if (ft_strcmp(ft_strtolower(arg), "mandelbrot") == 0)
-			d->args.fractal = MANDELBROT;
-		else if (ft_strcmp(ft_strtolower(arg), "third") == 0)
-			d->args.fractal = THIRD;
-	}
+		catch_this_one2(d, arg);
 	else if (ft_strcmp(arg, "-s") == 0)
 		d->args.sound = 1;
 	else if (ft_strcmp(arg, "-l") == 0)

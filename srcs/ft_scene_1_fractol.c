@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 03:55:30 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 23:49:22 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/27 23:00:20 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ t_fract		*fractal_param(int init)
 		return (&param);
 	if (init == 1 && ((param.itemax = ITE_MAX) || 1))
 	{
-		if (((param.itemin = ITE_MIN) || 1) && data()->args.fractal == JULIA)
+		if (((param.itemin = ITE_MIN) || 1) && data()->args.fractal >= JULIA)
 		{
 			param.top.r = -1;
 			param.top.i = -1.2;
 			param.bot.r = 1;
 			param.bot.i = 1.2;
 		}
-		else if (data()->args.fractal == MANDELBROT
-		|| data()->args.fractal == THIRD)
+		else
 		{
 			param.top.r = -2.1;
 			param.top.i = -1.2;
@@ -66,6 +65,12 @@ static void	wich_fractol(t_img *lay, t_fract *f)
 	else if (d->args.fractal == THIRD)
 		while (++f->i < param->i)
 			scene_1_draw_third(lay, param, f);
+	else if (d->args.fractal == BONUS1)
+		while (++f->i < param->i)
+			scene_1_draw_bonus1(lay, param, f);
+	else if (d->args.fractal == BONUS2)
+		while (++f->i < param->i)
+			scene_1_draw_bonus2(lay, param, f);
 	else
 		exit1(1, data(), "Unable to find the asked fractal");
 }
@@ -83,7 +88,7 @@ static void	*calc_pixel(void *i)
 		zoomin(&data()->mlx, fractal_param(0));
 	if (data()->mlx.input.wheeldown)
 		zoomout(&data()->mlx, fractal_param(0));
-	if (data()->args.fractal == JULIA)
+	if (data()->args.fractal == JULIA || data()->args.fractal == BONUS1)
 	{
 		f->c.r = ((double)data()->mlx.input.mo_x / (double)data()->mlx.winx)
 		* param->delta.r * param->zoom + param->top.r * param->zoom;

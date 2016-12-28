@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/25 21:08:21 by mlinhard         ###   ########.fr        #
+#    Updated: 2016/12/28 02:50:18 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ LIST	=	ft_data \
 			ft_scene_0_intro \
 			ft_scene_1_fractol \
 			ft_scene_1_fractol_draw \
+			ft_scene_1_fractol_draw2 \
 			ft_catch_options \
 			ft_complexe \
 			ft_fractol

@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 10:32:55 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/26 00:09:09 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/28 02:57:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@
 */
 # define ZOOM_VALUE 0.003
 # define MOVE_VALUE 0.01
-# define ITE_MAX 60
-# define ITE_MIN 45
+# define ITE_MAX 70
+# define ITE_MIN 30
 
 /*
 ** DOSSIER DEPUIS LEQUEL SONT AUTOMATIQUEMENT IMPORTé LES GIFS
