@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/25 20:55:35 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/25 20:55:35 by mlinhard         ###   ########.fr       */
+/*   Updated: 2016/12/28 06:47:46 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	ft_display_help(void)
 	ft_putendl("  \tJulia");
 	ft_putendl("  \tMandelbrot");
 	ft_putendl("  \tThird");
+	ft_putendl("  \tBonus1");
+	ft_putendl("  \tBonus2");
 	exit(0);
 }
