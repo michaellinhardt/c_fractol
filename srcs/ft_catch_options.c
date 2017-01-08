@@ -6,7 +6,7 @@
 /*   By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/18 22:17:45 by mlinhard          #+#    #+#             */
-/*   Updated: 2016/12/28 02:49:08 by mlinhard         ###   ########.fr       */
+/*   Updated: 2017/01/08 02:55:39 by mlinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static void		window_size(t_dmlx *m, char *arg, int i)
 	while (++arg && ft_isdigit(*arg) && ++i && i < 11)
 		val[i] = *arg;
 	*ptr = ft_atoi(arg);
+	if (*ptr < 1)
+		exit1(1, data(), "window size x and y must be over 0 ..");
 	if (xy == 1 && *ptr > WIN_X_MAX && !(data()->args.console = 0))
 		exit1(1, data(), "window size_x must be under 1920");
 	else if (xy == 2 && *ptr > WIN_Y_MAX && !(data()->args.console = 0))

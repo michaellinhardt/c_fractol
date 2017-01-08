@@ -6,7 +6,7 @@
 #    By: mlinhard <mlinhard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/14 10:37:09 by mlinhard          #+#    #+#              #
-#    Updated: 2016/12/28 02:50:18 by mlinhard         ###   ########.fr        #
+#    Updated: 2017/01/08 02:53:24 by mlinhard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,4 +101,4 @@ re: fclean $(NAME)
 test: $(NAME)
 	./fractol julia
 
-.PHONY: all clean clean2 fclean re fractol sdl_install
+.PHONY: all clean clean2 fclean re sdl_install
